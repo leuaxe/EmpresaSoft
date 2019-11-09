@@ -53,8 +53,8 @@ public class Producto{
         this.asignado = asignado;
     }
 
-    public boolean getAsignado(){
-        return this.asignado;
+    public boolean isAsignado() {
+        return asignado;
     }
 
     public void imprime(){
