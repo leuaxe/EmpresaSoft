@@ -31,4 +31,10 @@ public class AlmacenGestion {
             }
         }
     }
+
+    public void imprimeListaProductos(){
+        for (int i = 0; i < almacen.length-1; i++) {
+            almacen[i].imprime();
+        }
+    }
 }
