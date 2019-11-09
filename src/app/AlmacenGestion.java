@@ -18,4 +18,17 @@ public class AlmacenGestion {
     public void setAlmacen(Producto[] almacen) {
         this.almacen = almacen;
     }
+
+    public void OrdenarAlmacenPorValor(){
+        Producto auxiliar = new Producto();
+        for (int i = 0; i < almacen.length-1; i++) {
+            for (int j = 0; j < almacen.length-i-1; j++) {
+                if (almacen[j].getValor() > almacen[j+1].getValor()) {
+                    auxiliar = almacen[j];
+                    almacen[j] = almacen[j+1];
+                    almacen[j+1] = auxiliar;
+                }
+            }
+        }
+    }
 }
