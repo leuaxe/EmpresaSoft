@@ -45,6 +45,23 @@ public class AlmacenGestion {
         }
     }
 
+    //busqueda de elementos desordenados
+    public Producto BuscarProductoSec(String id){
+        Producto p = new Producto;
+        for (int i = 0; i < almacen.length; i++) {
+            if (almacen[i].getID().compareTo(id) == 0) {
+                p = almacen[i];
+            }
+        }
+
+        return p;
+    }
+
+    //busqueda donde los productos estan ordenados
+    public Producto BuscarProductoBinaria(String id){
+
+    }
+
     public void imprimeListaProductos(){
         for (int i = 0; i < almacen.length-1; i++) {
             almacen[i].imprime();
