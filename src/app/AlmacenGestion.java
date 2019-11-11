@@ -47,7 +47,7 @@ public class AlmacenGestion {
 
     //busqueda de elementos desordenados
     public Producto BuscarProductoSec(String id){
-        Producto p = new Producto;
+        Producto p = new Producto();
         for (int i = 0; i < almacen.length; i++) {
             if (almacen[i].getID().compareTo(id) == 0) {
                 p = almacen[i];
@@ -57,9 +57,12 @@ public class AlmacenGestion {
         return p;
     }
 
-    //busqueda donde los productos estan ordenados
+    //busqueda donde los productos estan ordenados y se encuentra la mitad
+    //del arreglo y se ve si el valor buscado esta a la izq o der
     public Producto BuscarProductoBinaria(String id){
+        Producto p = new Producto();
 
+        return p;
     }
 
     public void imprimeListaProductos(){
