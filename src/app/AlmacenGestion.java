@@ -60,9 +60,22 @@ public class AlmacenGestion {
     //busqueda donde los productos estan ordenados y se encuentra la mitad
     //del arreglo y se ve si el valor buscado esta a la izq o der
     public Producto BuscarProductoBinaria(String id){
-        Producto p = new Producto();
+        int inf = 0;
+        int sup = almacen.length - 1;
+        boolean encontrado = false;
+        while ((encontrado == false) && (sup >= inf)) {
+            int centro = (inf+sup)/2;
+            if (almacen[centro].getID() == id) {
+                encontrado = true;
+                return almacen[centro];
+            } else if(id.compareTo(almacen[centro].getID()) > 0){
+                inf = centro + 1;
+            } else{
+                sup = centro - 1;
+            }
+        }
 
-        return p;
+        return null;
     }
 
     public void imprimeListaProductos(){
