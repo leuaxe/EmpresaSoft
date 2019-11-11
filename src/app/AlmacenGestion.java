@@ -1,5 +1,7 @@
 package app;
 
+import java.util.ArrayList;
+
 public class AlmacenGestion {
     private Producto[] almacen;
 
@@ -76,6 +78,33 @@ public class AlmacenGestion {
         }
 
         return null;
+    }
+
+    //metodo que devuelve un arreglo con todos los productos de clase "A"
+    //se para como parametro la cantidad que queremos de stock
+    public Producto[] prepararPedidoTC(int n){
+        //primero hay que forzar la ordenacion del almacen
+        this.OrdenarAlmacenPorValor();
+
+        ArrayList<Producto> lstock = new ArrayList<Producto>();
+        int i = almacen.length-1; //cantidad de productos en el almacen
+        int disponible = 0; //guarda la cantidad de productos encontrados de clase "a"
+
+        while((i >= 0) && (disponible < n )){
+            if (almacen[i].getClase().compareTo("A") == 0) {
+                lstock.add(almacen[i]);
+                //cambiamos el valor del atributo "asignado" de producto encontrado
+                almacen[i].setAsignado(true);
+                disponible++;
+            }
+            i--;
+        }
+
+        //convertimos el ArrayList a un arreglo porque eso devuelve el metodo
+        Producto[] resultado = new Producto[lstock.size()]; //size es el length de los arraylist
+        lstock.toArray(resultado);
+
+        return resultado;
     }
 
     public void imprimeListaProductos(){
