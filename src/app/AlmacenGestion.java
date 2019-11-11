@@ -107,6 +107,33 @@ public class AlmacenGestion {
         return resultado;
     }
 
+    //arreglo de productos que seran enviados a la tienda de segunda mano
+    public Producto[] prepararPedidoSM(int n){
+        //primero hay que forzar la ordenacion del almacen
+        this.OrdenarAlmacenPorValor();
+
+        ArrayList<Producto> lstock = new ArrayList<Producto>();
+        int i = almacen.length-1;
+        int disponible = 0; 
+
+        while((i >= 0) && (disponible < n )){
+            //se busca los productos que atributo "asignacion" es false
+            if (almacen[i].isAsignado() == false) {
+                lstock.add(almacen[i]);
+                //cambiamos el valor del atributo "asignado" de producto encontrado
+                almacen[i].setAsignado(true);
+                disponible++;
+            }
+            i--;
+        }
+
+        //convertimos el ArrayList a un arreglo porque eso devuelve el metodo
+        Producto[] resultado = new Producto[lstock.size()]; //size es el length de los arraylist
+        lstock.toArray(resultado);
+
+        return resultado;
+    }
+
     public void imprimeListaProductos(){
         for (int i = 0; i < almacen.length-1; i++) {
             almacen[i].imprime();
