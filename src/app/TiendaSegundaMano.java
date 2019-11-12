@@ -7,6 +7,7 @@ public class TiendaSegundaMano{
     public TiendaSegundaMano(String nombre, Producto[] stock){
         this.nombre = nombre;
         this.stock = stock;
+        this.aplicarDescuento();
     }
 
     public String getNombre() {
