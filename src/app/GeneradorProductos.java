@@ -11,7 +11,7 @@ public class GeneradorProductos{
 
         for (int i = 0; i < n; i++) {
             Producto p = new Producto();
-            p.setID(Integer.toString((int)Math.random()*1000000));
+            p.setID(Integer.toString((int)(Math.random()*1000000)));
             p.setValor(r.nextDouble() * 1000);
             p.setPeso(r.nextDouble() * 10);
             p.setAsignado(false);
