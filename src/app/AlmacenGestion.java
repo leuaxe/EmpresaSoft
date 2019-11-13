@@ -135,7 +135,7 @@ public class AlmacenGestion {
     }
 
     public void imprimeListaProductos(){
-        for (int i = 0; i < almacen.length-1; i++) {
+        for (int i = 0; i < almacen.length; i++) {
             almacen[i].imprime();
         }
     }
