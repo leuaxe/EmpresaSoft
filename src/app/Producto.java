@@ -1,5 +1,7 @@
 package app;
 
+import java.text.DecimalFormat;
+
 public class Producto{
     private String ID;
     private double valor;
@@ -58,6 +60,10 @@ public class Producto{
     }
 
     public void imprime(){
+        //para imprimir valores solo con 2 decimales
+        //entre los parentesis pongo el formato que nuestren los decimales
+        DecimalFormat decimales = new DecimalFormat("00.00"); 
+        
         System.out.println("Id: "+ this.ID + ", valor: " + this.valor +
          ", peso: " + this.peso + ", asignado: " + this.asignado + ", clase: " + this.clase);
     }
