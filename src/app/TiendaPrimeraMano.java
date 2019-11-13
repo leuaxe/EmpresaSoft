@@ -30,7 +30,7 @@ public class TiendaPrimeraMano{
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("---------------Lista de productos de la tienda central -------------------");
         double beneficio = 0.0;
-        for (int i = 0; i < stock.length-1; i++) {
+        for (int i = 0; i < stock.length; i++) {
             stock[i].imprime();
             beneficio += stock[i].getValor(); //suma el total del valor de los productos
         }
