@@ -63,8 +63,8 @@ public class Producto{
         //para imprimir valores solo con 2 decimales
         //entre los parentesis pongo el formato que nuestren los decimales
         DecimalFormat decimales = new DecimalFormat("00.00"); 
-        
-        System.out.println("Id: "+ this.ID + ", valor: " + this.valor +
+
+        System.out.println("Id: "+ this.ID + ", valor: " + decimales.format(this.valor) +
          ", peso: " + this.peso + ", asignado: " + this.asignado + ", clase: " + this.clase);
     }
 }
