@@ -64,7 +64,10 @@ public class Producto{
         //entre los parentesis pongo el formato que nuestren los decimales
         DecimalFormat decimales = new DecimalFormat("00.00"); 
 
+        //formato para el pero
+        DecimalFormat pesos = new DecimalFormat("00.0");
+
         System.out.println("Id: "+ this.ID + ", valor: " + decimales.format(this.valor) +
-         ", peso: " + this.peso + ", asignado: " + this.asignado + ", clase: " + this.clase);
+         ", peso: " + pesos.format(this.peso) + ", asignado: " + this.asignado + ", clase: " + this.clase);
     }
 }
